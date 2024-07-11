@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  display: flex;
+  background-color: #1b1b1b;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 100vh;
+}
+
+.titleText {
+  text-decoration: underline;
+  text-decoration-color: #c47cff;
+  color: #fff;
+}
+
+.form {
+  background-color: #585757;
+  display: flex;
+  width: 40vw;
+  height: 100vh;
+  align-items: left;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 10px;
+  padding: 20px;
+  -webkit-box-shadow: 0px 0px 24px -4px rgba(0,0,0,1);
+-moz-box-shadow: 0px 0px 24px -4px rgba(0,0,0,1);
+box-shadow: 0px 0px 24px -4px rgba(0,0,0,1);
+}
+
+.input {
+  padding: 15px;
+  margin-top: 20px;
+  border: none;
+  border-style: none;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 0px 9px -4px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 0px 9px -4px rgba(0,0,0,1);
+  box-shadow: 0px 0px 9px -4px rgba(0,0,0,1);
+}
+
+.button {
+  background: none;
+  width: 30%;
+  cursor: pointer;
+  padding: 10px;
+  border: solid;
+  border-color: #c47cff;
+  border-radius: 10px;
+  transition: all 0.3s;
+  margin-top: 20px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.button:hover {
+  cursor: pointer;
+  padding: 10px;
+  border: solid;
+  border-radius: 5px;
+  border-color: #ffffff;
+}
+
+.infosCont {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  margin: 20px;
+  gap: 30px;
+  border-style: solid;
+  border-color: #8400ff;
+  border-width: 3px;
+  border-radius: 5px;
+}
+
+.divInfos {
+  height: 100vh;
+  padding-top: 20px;
+  padding-left: 20px;
+  color: #fff;;
+}
+
+.infosDiv {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.infosFilme, p {
+  font-weight: bold;
+}
+
+.infosFilme, span {
+  font-weight: normal;
+}
+
+.delIconButton {
+  cursor: pointer;
+  background: none;
+  border: none;
+  transition: all 0.3s;
+}
+
+.delIconButton:hover {
+
+  opacity: 0.5;
+}
