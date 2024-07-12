@@ -94,8 +94,6 @@ app.listen(3000)
 
 /*
 MongoDB
-
-
 User: filmesdb
 Password: 14jR36E6r3XQHp8B
 */

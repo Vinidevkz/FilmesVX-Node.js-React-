@@ -2,6 +2,8 @@ import { useEffect, useState, useRef } from "react";
 import "./style.css";
 import "../../src/index.css";
 
+import VxIcon from "../assets/vxicon.png";
+
 import api from "../services/api";
 import Trash from "../assets/delicon.png";
 
@@ -24,28 +26,41 @@ function Home() {
 
   async function deleteFilmes(id) {
     try {
-      await api.delete(`/filmes/${id}`);
-      getFilmes(); // Atualizar a lista de filmes após a exclusão
+      const confirmar = window.confirm("Deseja deletar este filme?");
+      
+      if (confirmar) {
+        await api.delete(`/filmes/${id}`);
+        getFilmes();
+      }
     } catch (error) {
       console.error("Erro ao deletar filme:", error);
     }
   }
-
+  
   async function createFilmes() {
     try {
       const newFilm = {
         name: inputName.current.value,
         genero: inputGenero.current.value,
-        faixaEtaria: inputFaixaEtaria.current.value,
+        faixaEtaria: parseInt(inputFaixaEtaria.current.value),
         duracaoFilme: inputDuracaoFilme.current.value,
       };
+  
+      const filmeExistente = filmes.find(filme => filme.name === newFilm.name);
+  
+      if (filmeExistente) {
+        alert(`Já existe um filme com o nome '${newFilm.name}'.`);
+        return;
+      }
+
       const response = await api.post("/filmes", newFilm);
       console.log("Filme criado:", response.data);
-      getFilmes(); // Atualizar a lista de filmes após a criação
+      getFilmes();
     } catch (error) {
       console.error("Erro ao criar filme:", error);
     }
   }
+  
 
   useEffect(() => {
     getFilmes();
@@ -53,9 +68,17 @@ function Home() {
 
   return (
     <div className="container">
-      <div>
+      <div className="formContainer">
+
         <form className="form">
-          <h2 className="titleText">Cadastrar Filme</h2>
+
+          <h2 className="titleText">
+            <div className="vxicon">
+            <img src={VxIcon} alt="Vx Icon" />
+            </div>  
+              Cadastrar Filme
+          </h2>
+
           <input
             ref={inputName}
             className="input"
@@ -121,9 +144,14 @@ function Home() {
             </div>
           ))}
         </div>
+
+
+
       </div>
     </div>
   );
 }
 
 export default Home;
+
+

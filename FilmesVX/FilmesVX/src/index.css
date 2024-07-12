@@ -10,22 +10,31 @@
 body {
   display: flex;
   background-color: #1b1b1b;
-  align-items: center;
-  justify-content: center;
 }
 
 .container {
   display: flex;
-  align-items: center;
-  justify-content: center;
+
+  justify-content: space-between;
   flex-direction: row;
   height: 100vh;
 }
 
 .titleText {
   text-decoration: underline;
-  text-decoration-color: #c47cff;
+  text-decoration-color: #9900ff;
   color: #fff;
+  display: flex;
+  align-items: center;
+}
+
+.formContainer {
+  align-items: center;
+}
+
+.vxicon img{
+  width: 100px;
+  height: 100px;
 }
 
 .form {
@@ -39,8 +48,8 @@ body {
   margin-right: 10px;
   padding: 20px;
   -webkit-box-shadow: 0px 0px 24px -4px rgba(0,0,0,1);
--moz-box-shadow: 0px 0px 24px -4px rgba(0,0,0,1);
-box-shadow: 0px 0px 24px -4px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 0px 24px -4px rgba(0,0,0,1);
+  box-shadow: 0px 0px 24px -4px rgba(0,0,0,1);
 }
 
 .input {
@@ -60,12 +69,12 @@ box-shadow: 0px 0px 24px -4px rgba(0,0,0,1);
   cursor: pointer;
   padding: 10px;
   border: solid;
-  border-color: #c47cff;
+  border-color: #aa41ff;
   border-radius: 10px;
   transition: all 0.3s;
   margin-top: 20px;
   font-weight: bold;
-  color: #fff;
+  color: #ffffff;
 }
 
 .button:hover {
@@ -90,6 +99,7 @@ box-shadow: 0px 0px 24px -4px rgba(0,0,0,1);
 
 .divInfos {
   height: 100vh;
+  width: 95rem;
   padding-top: 20px;
   padding-left: 20px;
   color: #fff;;
@@ -100,6 +110,8 @@ box-shadow: 0px 0px 24px -4px rgba(0,0,0,1);
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
+  max-height: 94vh; /* Defina a altura máxima da div */
+  overflow-y: scroll;
 }
 
 .infosFilme, p {
